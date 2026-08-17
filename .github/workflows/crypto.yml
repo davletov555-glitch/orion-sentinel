@@ -1,0 +1,36 @@
+name: Crypto 15m Scan (MASS & CASCADE)
+
+on:
+  schedule:
+- cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  crypto_scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run Crypto Scan Engine
+        env:
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+        run: |
+          python signal_engine.py crypto
+
+      - name: Commit & Push State & Journal
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/state.json data/journal.csv || true
+          git diff --quiet && git diff --staged --quiet || git commit -m "chore(bot): update crypto state [skip ci]"
+          git push || true
