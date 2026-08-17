@@ -1,6 +1,12 @@
 {
   "version": "2.2",
-  "open_positions": {},
+  "open_positions": {
+    "GOLD_CLIMAX_4D": {
+      "entry": 4471.4,
+      "direction": "LONG",
+      "msg_id": "1761"
+    }
+  },
   "last_signal_time": {},
   "closed_today": []
 }
