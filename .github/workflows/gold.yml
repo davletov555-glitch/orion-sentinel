@@ -2,7 +2,7 @@ name: Gold Quant Alpha Scan
 
 "on":
   schedule:
-    - cron: "*/15 * * * * 1-5"
+ - cron: "*/15 * * * 1-5"
   workflow_dispatch:
 
 permissions:
