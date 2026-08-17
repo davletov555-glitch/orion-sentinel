@@ -1,4 +1,4 @@
-name: Crypto 15m Scan (MASS & CASCADE)
+name: Crypto 15m Scan
 
 on:
   schedule:
@@ -14,20 +14,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
       - name: Run Crypto Scan Engine
         env:
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
         run: |
           python signal_engine.py crypto
-
-      - name: Commit & Push State & Journal
+      - name: Commit and Push State and Journal
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
