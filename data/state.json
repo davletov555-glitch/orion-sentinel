@@ -15,6 +15,11 @@
       "entry": 4453.3,
       "direction": "SHORT",
       "msg_id": "1804"
+    },
+    "GOLD_DXY_DIV": {
+      "entry": 4449.7,
+      "direction": "LONG",
+      "msg_id": "1805"
     }
   },
   "last_signal_time": {},
