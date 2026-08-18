@@ -10,6 +10,11 @@
       "entry": 4450.2,
       "direction": "LONG",
       "msg_id": "1801"
+    },
+    "GOLD_JUDAS": {
+      "entry": 4453.3,
+      "direction": "SHORT",
+      "msg_id": "1804"
     }
   },
   "last_signal_time": {},
