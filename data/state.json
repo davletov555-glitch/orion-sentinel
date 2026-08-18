@@ -5,6 +5,11 @@
       "entry": 4471.4,
       "direction": "LONG",
       "msg_id": "1761"
+    },
+    "GOLD_PREMARKET": {
+      "entry": 4450.2,
+      "direction": "LONG",
+      "msg_id": "1801"
     }
   },
   "last_signal_time": {},
